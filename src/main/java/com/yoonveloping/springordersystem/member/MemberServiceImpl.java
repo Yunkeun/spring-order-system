@@ -1,6 +1,6 @@
 package com.yoonveloping.springordersystem.member;
 
-public class MemberServiceImpl implements MemoryService {
+public class MemberServiceImpl implements MemberService {
 
 	private MemberRepository memberRepository = new MemoryMemberRepository();
 
