@@ -1,18 +1,24 @@
 package com.yoonveloping.springordersystem.order;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+import com.yoonveloping.springordersystem.AppConfig;
 import com.yoonveloping.springordersystem.member.Grade;
 import com.yoonveloping.springordersystem.member.Member;
 import com.yoonveloping.springordersystem.member.MemberService;
-import com.yoonveloping.springordersystem.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class OrderServiceTest {
 
-	MemberService memberService = new MemberServiceImpl();
-	OrderService orderService = new OrderServiceImpl();
+	MemberService memberService;
+	OrderService orderService;
+
+	@BeforeEach
+	public void beforeEach() {
+		AppConfig appConfig = new AppConfig();
+		memberService = appConfig.memberService();
+		orderService = appConfig.orderService();
+	}
 
 	@Test
 	void createOrder() {
