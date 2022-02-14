@@ -2,9 +2,11 @@ package com.yoonveloping.springordersystem.discount;
 
 import com.yoonveloping.springordersystem.member.Grade;
 import com.yoonveloping.springordersystem.member.Member;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class RateDiscountPolicy implements DiscountPolicy {
 
 	private static final int discountPercent = 10;
